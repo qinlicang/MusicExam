@@ -1,0 +1,24 @@
+{% extends "base.html" %} 
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row myCenter">
+	<h1>试题列表</h1>
+	<ol>
+	{% for item in items %}
+	    <li><a href="{{item.question_id}}#">{{ item.num }}</a></li>
+	{% endfor %}
+	</ol>
+  </div>
+    <div class="row myCenter">
+	<h1>答案列表</h1>
+	<ol>
+	{% for item in items %}
+	    <li><a href="{{item.question_id}}#">{{ item.correct }}</a></li>
+	{% endfor %}
+	</ol>
+  </div>
+  
+</div>
+{% endblock %}
